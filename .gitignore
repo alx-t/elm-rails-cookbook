@@ -1,0 +1,33 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
+
+/.ruby-version
+/.ruby-gemsets
+
+/config/database.yml
+
+/public/uploads
+/public/test_assets
+/public/sitemap*
+/public/assets
+*.DS_Store
+sandi_meter
+/.powrc
+/.sass-cache
+.rspec
+
+*.komodoproject
+*.swp
+
+/node_modules
+/public/packs
+/public/packs-test
