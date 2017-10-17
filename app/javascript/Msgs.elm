@@ -1,4 +1,7 @@
 module Msgs exposing (..)
 
+import Models exposing (Recipe)
+import RemoteData exposing (WebData)
+
 type Msg
-    = NoOp
+    = OnFetchRecipes (WebData (List Recipe))

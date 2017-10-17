@@ -1,5 +1,7 @@
 module Models exposing (..)
 
+import RemoteData exposing (WebData)
+
 type alias RecipeId =
     Int
 
@@ -10,9 +12,10 @@ type alias Recipe =
     }
 
 type alias Model =
-    { recipes : List Recipe
+    { recipes : WebData (List Recipe)
     }
 
 initialModel : Model
 initialModel =
-    { recipes = [ Recipe 1 "Test 1" "Test 1 desc" ]}
+    { recipes = RemoteData.Loading
+    }
