@@ -29,5 +29,6 @@ sandi_meter
 *.swp
 
 /node_modules
+/elm-stuff
 /public/packs
 /public/packs-test
