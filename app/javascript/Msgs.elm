@@ -5,3 +5,4 @@ import RemoteData exposing (WebData)
 
 type Msg
     = OnFetchRecipes (WebData (List Recipe))
+    -- | Mdl (Material.Msg Msg)

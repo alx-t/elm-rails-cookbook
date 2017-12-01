@@ -1,16 +1,19 @@
 module Recipes.List exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (..)
 import Msgs exposing (Msg)
 import Models exposing (Recipe)
 import RemoteData exposing (WebData)
 
+-- black : Options.Property c m
+-- black =
+--   Color.text Color.black
+
 view : WebData (List Recipe) -> Html Msg
 view response =
     div []
-        [ nav
-        , maybeList response
+        [ maybeList response
         ]
 
 maybeList : WebData (List Recipe) -> Html Msg
@@ -25,32 +28,30 @@ maybeList response =
         RemoteData.Failure error ->
             text (toString error)
 
-nav : Html Msg
-nav =
-    div [ class "" ]
-        [ div [ class "" ] [ text "Recipes" ] ]
-
 list : List Recipe -> Html Msg
 list recipes =
-    div [ class "" ]
-        [ table []
-            [ thead []
-                [ tr []
-                    [ th [] [ text "Id" ]
-                    , th [] [ text "Title" ]
-                    , th [] [ text "Description" ]
-                    , th [] [ text "Actions" ]
-                    ]
-                ]
-            , tbody [] (List.map recipeRow recipes)
-            ]
-        ]
+    div [ class "" ] ( List.map recipeRow recipes )
 
 recipeRow : Recipe -> Html Msg
 recipeRow recipe =
-    tr []
-        [ td [] [ text (toString recipe.id) ]
-        , td [] [ text recipe.title ]
-        , td [] [ text recipe.description ]
-        , td [] []
-        ]
+    -- Card.view
+    --     [ css "width" "400px" ]
+    --     [ Card.title
+    --         [ css "align-content" "flex-start"
+    --         , css "flex-direction" "row"
+    --         , css "align-items" "flex-start"
+    --         , css "justify-content" "space-between"
+    --         ]
+    --         [ Options.div
+    --             []
+    --             [ Card.head [ black ] [ text recipe.title ]
+    --             , Card.subhead [ black ] [ text recipe.description ]
+    --             ]
+    --         , Options.img
+    --             [ Options.attribute <| Html.Attributes.src "images/001.jpg"
+    --             , css "height" "96px"
+    --             , css "width" "96px"
+    --             ]
+    --             []
+    --         ]
+    --     ]

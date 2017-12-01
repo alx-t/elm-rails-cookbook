@@ -13,9 +13,11 @@ type alias Recipe =
 
 type alias Model =
     { recipes : WebData (List Recipe)
+    -- , mdl : Material.Model
     }
 
 initialModel : Model
 initialModel =
     { recipes = RemoteData.Loading
+    -- , mdl = Material.model
     }
